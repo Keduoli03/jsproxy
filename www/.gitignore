@@ -1,3 +1,8 @@
 *
 !README.md
 !.gitignore
+!404.html
+!conf.js
+!sw.js
+!assets
+!assets/**
