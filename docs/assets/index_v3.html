@@ -195,7 +195,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       padding: 0.75rem 0.5rem;
       border-radius: 0.75rem;
       text-decoration: none;
@@ -210,6 +210,11 @@
       width: 36px;
       height: 36px;
       border-radius: 0.5rem;
+    }
+    #list .site-name {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      line-height: 1.2;
     }
 
     /* 底部 */
@@ -318,24 +323,24 @@
     }
 
     const SITE_LIST = [
-      ['google', ''],
-      ['youtube', ''],
-      ['twitter', 'twitter.com/google'],
-      ['flickr', ''],
-      ['quora', 'www.quora.com/topic/JavaScript-programming-language'],
-      ['twitch', 'www.twitch.tv/'],
-      ['reddit', ''],
-      ['wiki', 'zh.wikipedia.org/'],
-      ['gist', 'gist.github.com/'],
-      ['facebook', 'facebook.com/Google/'],
-      ['blogger', ''],
+      ['google', '', 'Google'],
+      ['youtube', '', 'YouTube'],
+      ['twitter', 'twitter.com/google', 'Twitter'],
+      ['flickr', '', 'Flickr'],
+      ['quora', 'www.quora.com/topic/JavaScript-programming-language', 'Quora'],
+      ['twitch', 'www.twitch.tv/', 'Twitch'],
+      ['reddit', '', 'Reddit'],
+      ['wiki', 'zh.wikipedia.org/', 'Wikipedia'],
+      ['gist', 'gist.github.com/', 'Gist'],
+      ['facebook', 'facebook.com/Google/', 'Facebook'],
+      ['blogger', '', 'Blogger'],
     ]
 
     function showIcons() {
       list.innerHTML = SITE_LIST.map(v => {
-        let [id, url] = v
+        let [id, url, name] = v
         url = url || `www.${id}.com/`
-        return `<a rel="noopener noreferrer" href=./-----https://${url}><img width=36 height=36 src=__sys__/assets/ico/${id}.png></a>`
+        return `<a rel="noopener noreferrer" href=./-----https://${url}><img width=36 height=36 src=__sys__/assets/ico/${id}.png><span class="site-name">${name}</span></a>`
       }).join('')
     }
 
